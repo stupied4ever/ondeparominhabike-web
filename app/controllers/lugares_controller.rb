@@ -1,6 +1,6 @@
 class LugaresController < InheritedResources::Base
   def index
-      @lugares = Lugar.since(params[:since]) if params[:since]
+      @lugares = Lugar.desde(params[:desde]) if params[:desde]
       index! do |format|
         format.html 
         format.json { 

@@ -20,7 +20,7 @@ describe LugaresController do
       l.updated_at = "2013-02-18 01:11:12"
       l.save
       
-      get :index, :since => '2013-01-18 01:11:12'
+      get :index, :desde => '2013-01-18 01:11:12'
       assigns(:lugares).size.should == 1
     end
     
@@ -31,9 +31,9 @@ describe LugaresController do
       l.save
       
       data_busca = '2013-01-18 01:11:12'
-      lugares_atualizados = Lugar.since(data_busca)
+      lugares_atualizados = Lugar.desde(data_busca)
       
-      get :index, :since => data_busca, :format => :json
+      get :index, :desde => data_busca, :format => :json
       sinc = assigns(:sincronizacao)
       sinc.size.should == 2
       assert_equal "2013-02-18T01:11:12Z", json_response['ultima_atualizacao']
