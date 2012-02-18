@@ -7,6 +7,8 @@ gem 'rails', '3.1.0'
 
 gem 'sqlite3'
 gem "geocoder"
+gem 'inherited_resources'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -26,6 +28,18 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+
+group :development, :test  do
+
+	gem 'database_cleaner'
+	gem "rspec-rails", "~> 2.6"
+	gem 'guard-rspec'
+	gem 'growl'
+	gem 'shoulda'
+	gem 'factory_girl'
+	gem 'mocha', :require => false
+end
 
 group :test do
   # Pretty printed test output
