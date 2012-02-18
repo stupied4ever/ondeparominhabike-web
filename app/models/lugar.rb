@@ -1,6 +1,8 @@
 class Lugar < ActiveRecord::Base
   geocoded_by :endereco_completo   # can also be an IP address
   scope :since, lambda { |*args| {:conditions => ["updated_at > ?", (args.first)]} }
+  scope :ultimo_atualizado, lambda { |*args| {:order => "updated_at DESC", :limit => 1} }
+  
   before_validation :geocode, :if => :executa_geocode        # auto-fetch coordinates
   
   validates_presence_of :nome, :latitude, :longitude

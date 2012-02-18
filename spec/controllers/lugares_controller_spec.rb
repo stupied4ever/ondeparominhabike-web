@@ -23,6 +23,26 @@ describe LugaresController do
       get :index, :since => '2013-01-18 01:11:12'
       assigns(:lugares).size.should == 1
     end
+    
+    
+    it "quando for uma requisicao json, deve voltar a maior data de atualizacao dos lugares e os lugares atualizados" do
+      l = Lugar.all.last
+      l.updated_at = "2013-02-18 01:11:12"
+      l.save
+      
+      data_busca = '2013-01-18 01:11:12'
+      lugares_atualizados = Lugar.since(data_busca)
+      
+      get :index, :since => data_busca, :format => :json
+      sinc = assigns(:sincronizacao)
+      sinc.size.should == 2
+      assert_equal "2013-02-18T01:11:12Z", json_response['ultima_atualizacao']
+      assert_equal lugares_atualizados.to_json, json_response['lugares'].to_json
+    end
 
+  end
+  
+  def json_response
+      ActiveSupport::JSON.decode @response.body
   end
 end
