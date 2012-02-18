@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tipo:</b>
+  <%= @lugar.tipo %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @lugar.nome %>
+</p>
+
+<p>
+  <b>Endereco rua:</b>
+  <%= @lugar.endereco_rua %>
+</p>
+
+<p>
+  <b>Endereco numero:</b>
+  <%= @lugar.endereco_numero %>
+</p>
+
+<p>
+  <b>Endereco bairro:</b>
+  <%= @lugar.endereco_bairro %>
+</p>
+
+<p>
+  <b>Endereco cidade:</b>
+  <%= @lugar.endereco_cidade %>
+</p>
+
+<p>
+  <b>Endereco estado:</b>
+  <%= @lugar.endereco_estado %>
+</p>
+
+
+<%= link_to 'Edit', edit_lugar_path(@lugar) %> |
+<%= link_to 'Back', lugares_path %>

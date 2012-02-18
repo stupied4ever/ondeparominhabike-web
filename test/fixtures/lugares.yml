@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tipo: MyString
+  nome: MyString
+  endereco_rua: MyText
+  endereco_numero: MyString
+  endereco_bairro: MyString
+  endereco_cidade: MyString
+  endereco_estado: MyString
+
+two:
+  tipo: MyString
+  nome: MyString
+  endereco_rua: MyText
+  endereco_numero: MyString
+  endereco_bairro: MyString
+  endereco_cidade: MyString
+  endereco_estado: MyString
