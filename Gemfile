@@ -44,8 +44,7 @@ group :development, :test  do
 	gem 'guard-rspec'
 	gem 'growl'
 	gem 'shoulda'
-	gem 'factory_girl'
-	gem 'mocha', :require => false
+	gem 'factory_girl_rails' 
 end
 
 group :test do
