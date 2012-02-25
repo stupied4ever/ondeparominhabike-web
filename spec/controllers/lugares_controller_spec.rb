@@ -15,7 +15,6 @@ describe LugaresController do
     end
     
     it "deve pegar os lugares que ainda nao foram sincronizados" do
-      puts Lugar.all.size
       l = Lugar.all.last
       l.updated_at = "2013-02-18 01:11:12"
       l.save

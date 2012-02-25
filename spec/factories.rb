@@ -3,13 +3,7 @@ FactoryGirl.define do
   factory :lugar do
     tipo "residencia"
     nome "casa do rafael"
-    endereco_rua "rua brigadeiro araujo"
-    endereco_numero "76"
-    endereco_bairro "freguesia do ó"
-    endereco_cidade "sao paulo"
-    endereco_estado "SP"
-    
-    latitude 123123
-    longitude 123123
+    #{endereco_rua} #{endereco_numero}, #{endereco_cidade}, #{endereco_estado}
+    endereco "rua brigadeiro araujo 76, sao paulo, SP"
   end
 end

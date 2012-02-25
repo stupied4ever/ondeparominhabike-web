@@ -4,7 +4,15 @@ describe Lugar do
   it {should validate_presence_of(:nome)}
   it {should validate_presence_of(:latitude)}
   it {should validate_presence_of(:longitude)}
+  it {should validate_presence_of(:endereco)}
   
+    
+  it "executando em test com geolocalizacao" do
+    l = Factory(:lugar)
+    
+    l.latitude.should == -23.49568
+    l.longitude.should == -46.6940590
+  end
   
   it "tenho um scopo para buscar o ultimo atualido" do
     Factory(:lugar)
