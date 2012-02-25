@@ -300,8 +300,14 @@ lugares << Lugar.new(:executa_geolocalizacao_reversa => true, :tipo => 'importad
 lugares << Lugar.new(:executa_geolocalizacao_reversa => true, :tipo => 'importado', :nome => 'Palmeira - PR', :latitude => '-25.434237', :longitude => '-49.999928')
 
 lugares.each do |l|
+  tentativas = 0
   while l.save == false
     puts "deve tentar novamente - #{l.nome}"
-    sleep(200)
+    if tentativas == 30
+      puts "ERRO NO ARQUIVO DE SEED, confira todas as localizacoes"
+      return 
+    end
+    sleep(0.2)
+    tentativas = tentativas + 1
   end
 end
