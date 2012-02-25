@@ -301,6 +301,7 @@ lugares << Lugar.new(:executa_geolocalizacao_reversa => true, :tipo => 'importad
 
 lugares.each do |l|
   while l.save == false
-    puts "tentar novamente"
+    puts "deve tentar novamente - #{l.nome}"
+    sleep(200)
   end
 end
