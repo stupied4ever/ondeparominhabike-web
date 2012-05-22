@@ -5,7 +5,7 @@ class LugaresController < InheritedResources::Base
         format.html 
         format.json { 
           ultimo_atualizado = @lugares.ultimo_atualizado.first 
-          @sincronizacao = {:ultima_atualizacao => (ultimo_atualizado ? ultimo_atualizado.updated_at + 1.second : nill) , :lugares => @lugares}
+          @sincronizacao = {:ultima_atualizacao => (ultimo_atualizado ? ultimo_atualizado.updated_at + 1.second : nil) , :lugares => @lugares}
           render json: @sincronizacao
         }
       end
