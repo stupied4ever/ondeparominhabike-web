@@ -11,20 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120218001248) do
+ActiveRecord::Schema.define(:version => 20120224231853) do
 
   create_table "lugares", :force => true do |t|
     t.string   "tipo"
     t.string   "nome"
-    t.text     "endereco_rua"
-    t.string   "endereco_numero"
-    t.string   "endereco_bairro"
-    t.string   "endereco_cidade"
-    t.string   "endereco_estado"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.text     "endereco"
   end
 
 end

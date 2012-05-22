@@ -4,11 +4,10 @@
   <tr>
     <th>Tipo</th>
     <th>Nome</th>
-    <th>Endereco rua</th>
-    <th>Endereco numero</th>
-    <th>Endereco bairro</th>
-    <th>Endereco cidade</th>
-    <th>Endereco estado</th>
+    <th>Endereco</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+
     <th></th>
     <th></th>
     <th></th>
@@ -18,11 +17,10 @@
   <tr>
     <td><%= lugar.tipo %></td>
     <td><%= lugar.nome %></td>
-    <td><%= lugar.endereco_rua %></td>
-    <td><%= lugar.endereco_numero %></td>
-    <td><%= lugar.endereco_bairro %></td>
-    <td><%= lugar.endereco_cidade %></td>
-    <td><%= lugar.endereco_estado %></td>
+    <td><%= lugar.endereco %></td>
+    <td><%= lugar.latitude %></td>
+    <td><%= lugar.longitude %></td>
+
     <td><%= link_to 'Show', lugar %></td>
     <td><%= link_to 'Edit', edit_lugar_path(lugar) %></td>
     <td><%= link_to 'Destroy', lugar, confirm: 'Are you sure?', method: :delete %></td>
