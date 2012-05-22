@@ -1,5 +1,7 @@
 Ondeparominhabike::Application.routes.draw do
-  resources :lugares, :only => [:index, :show, :count]
+  resources :lugares, :only => [:index, :show] do
+    get 'count'
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
