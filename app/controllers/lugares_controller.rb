@@ -16,9 +16,7 @@ class LugaresController < InheritedResources::Base
        index! do |format|
          format.html 
          format.json { 
-           ultimo_atualizado = @lugares.ultimo_atualizado.first 
-           @sincronizacao = {:ultima_atualizacao => (ultimo_atualizado ? ultimo_atualizado.updated_at + 1.second : nil) , :quantidade => @lugares.size }
-           render json: @sincronizacao
+           render json: {:quantidade => @lugares.size }
          }
        end
     end
