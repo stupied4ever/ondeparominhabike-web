@@ -4,7 +4,7 @@ class Lugar < ActiveRecord::Base
   scope :ultimo_atualizado, lambda { |*args| {:order => "updated_at DESC", :limit => 1} }
 
   before_validation :reverse_geocode, :if => :executa_geolocalizacao_reversa
-  before_validation :geocode, :atualiza_latitude_e_longitude, :if => :executa_geolocalizacao        # auto-fetch coordinates
+  before_validation :geocode, :if => :executa_geolocalizacao        # auto-fetch coordinates
   
 
   validates_presence_of :nome, :latitude, :longitude, :endereco
